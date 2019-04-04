@@ -1,0 +1,76 @@
+
+
+feign:
+  okhttp:
+    enable: true
+
+server:
+  port: 20011
+  tomcat:
+    maxHttpHeaderSize: 10240
+#    logging:
+#    #  level:
+#    #    org:
+#    #      springframework: INFO
+#    hui.util.db2.mapper: DEBUG
+ribbon:
+  ReadTimeout: 60000
+  ConnectTimeout: 60000
+spring:
+  feign:
+    httpclient:
+      enable: false
+    okhttp:
+      enable: true
+    client:
+      config:
+        default:
+          connectTimeout: 600000
+          readTimeout: 600000
+  application:
+    name: helloredisaop
+    hystrix:
+      enabled: false
+  http:
+    log-request-details: true
+  security:
+    base:
+      enable: false
+
+
+  sleuth:
+    #traceId128: true
+    sampler:
+      probability: 1.0
+    log:
+      json:
+        enabled: true
+    feign:
+      enabled: true
+      processor:
+        enabled: true
+
+
+
+
+
+
+
+
+
+
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone:  http://eureka.didispace.com/eureka/
+
+
+
+
+debug: true
+#trace: true
+
+
